@@ -17,7 +17,7 @@ The model is run for 30 days.  During the last 3 days, grazing is turned off for
 
 The model is written in MATLAB (devloped in R2012b, still runs in R2018b).  Download the files in the [m_files](https://github.com/ANetTow/Pro_IBM/tree/master/m_files) directory and either add them to your MATLAB search path OR put them in your working directory.  Variables and usage for each function can be found by calling `help function_name` at the prompt.
 
-* `Pro_IBM` runs the model with user-defined input parameters.
+* `Pro_IBM` runs the model with user-defined input parameters and calls the functions below.
 
 * `initialize_pro` initializes the structure that stores cell data and the starting population.
 
@@ -43,7 +43,7 @@ Cell cycle parameters and other variables are defined by the user:
 
 Input/output variables and reasonable ranges for *Prochlorococcus* are summarized in the table below:
 
-Input:
+###Input:
 
 |Name|    Description|                  Values |
 |---|     ---|                          ---|
@@ -56,17 +56,19 @@ Input:
 |Ps_width|Parameter that controls the "width" of the probability function for cells entering S phase based on their size| 85 fg C|
 |Ps_zero|Parameter that states where the probability for cells entering S is zero|45|
 
-Output:
+###Output:
 
-  - `data_store` =    Structure containing cellular information
-  - `av_cell_size` =  Average cell size (fg C per cell )
-  - `av_cell_dna` =   Average DNA per cell (genome copies per cell )
-  - `tm` =            Time vector (d)
-  - `mu_pop` =        Population growth rate calculated from final days when grazing is turned off 
-  - `cells` =         number of cells
-  - `S` =             fraction of cells in S phase (1 < dnapercell < 2) 
-  - `G2` =            fraction of cells in G2 phase (dna = 2)
-  - `index` =         indices for the last three days
+|Name|        Description|                              Values |
+|---|         ---|                                      ---|
+|data_store|  Structure containing cellular information|  |
+|av_cell_size|Average cell size|                        24 - 85 fg C per cell|
+|av_cell_dna| Average DNA per cell|                     1 - 2 genome copies per cell|
+|tm|          Time vector|                              0 - 31 d|
+|mu_pop|      Population growth rate |                  0.35 - 0.85 d^(-1)|
+|cells|       Number of cells|                          |
+|S|           Fraction of cells in S phase|             0 - 1|
+|G2|          Fraction of cells in G2 phase|            0 - 1|
+|index|       Indices for the last three days|          |
 
 ## References
 
