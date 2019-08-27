@@ -11,6 +11,8 @@ The IBM is fully described in Hynes et al (2015a). The flowchart shows the proce
 
 The model is run for 30 days.  During the last 3 days, grazing is turned off for analysis.
 
+<br clear="right"/>
+
 ## Functions
 
 ## Variables
