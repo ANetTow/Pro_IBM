@@ -15,7 +15,7 @@ The model is run for 30 days.  During the last 3 days, grazing is turned off for
 
 ## Functions
 
-The model is written in MATLAB (devloped in R2012b, still runs in R2018b).
+The model is written in MATLAB (devloped in R2012b, still runs in R2018b).  Download the files in the [m_files](https://github.com/ANetTow/Pro_IBM/tree/master/m_files) directory and either add them to your MATLAB search path OR put them in your working directory.  Variables and usage for each function can be found by calling `help function_name` at the prompt.
 
 * `Pro_IBM` runs the model with user-defined input parameters.
 
@@ -37,8 +37,32 @@ The model is written in MATLAB (devloped in R2012b, still runs in R2018b).
 
 ## Variables
 
+Cell cycle parameters and other variables are defined by the user:  
+`[data_store, av_cell_size, av_cell_dna, tm, mu_pop, cells, S, G2, index] = Pro_IBM(mu_cell, T_S, T_G2, daylength, light_regime, Cg, Ps_width, Ps_zero)`
+
+* Input:
+  - `mu_cell` =       Cellular growth rate (d^(?1))
+  - `T_S` =           Duration of S phase (d)
+  - `T_G2` =          Duration G2 phase (d)
+  - `daylength` =     Length of daylight , sunrise to sunset (h)
+  - `light_regime` =  String denoting whether light is binary ('binary'), sinusoidal ('sine'), or constant ('constant') 
+  - `Cg` =            Circadian gate (d)
+  - `Ps_width` =      Parameter that controls the "width" of the probability function for cells entering S phase based on their size (fg C). Typically 85.
+  - `Ps_zero` =       Parameter that states where the probability for cells entering S is zero. Typically 45.
+
+* Output:
+  - `data_store` =    Structure containing cellular information
+  - `av_cell_size` =  Average cell size (fg C per cell )
+  - `av_cell_dna` =   Average DNA per cell (genome copies per cell )
+  - `tm` =            Time vector (d)
+  - `mu_pop` =        Population growth rate calculated from final days when grazing is turned off 
+  - `cells` =         number of cells
+  - `S` =             fraction of cells in S phase (1 < dnapercell < 2) 
+  - `G2` =            fraction of cells in G2 phase (dna = 2)
+  - `index` =         indices for the last three days
+
 ## References
 
-- Hynes A. M., B. J. Blythe, and B. J. Binder (2015a).  "An individual-based model for the analysis of *Prochlorococcus* diel cycle behavior," *Ecol. Model.* **301**:1 - 15, doi:10.1016/j.ecolmodel.2015.01.011.
+- Hynes A. M., B. J. Blythe, and B. J. Binder (2015a).  "An individual-based model for the analysis of *Prochlorococcus* diel cycle behavior," *Ecol. Model.* **301**:1 - 15, [doi: 10.1016/j.ecolmodel.2015.01.011](https://doi.org/10.1016/j.ecolmodel.2015.01.011).
 
-- Hynes A. M., K. L. Rhodes, and B. J. Binder (2015b).  "Assessing cell cycle-based methods of measuring *Prochlorococcus* division rates using an individual-based model," *Limnol. Oceanogr. Methods* **13**:640 - 650, doi:10.1002/lom3.10054.
+- Hynes A. M., K. L. Rhodes, and B. J. Binder (2015b).  "Assessing cell cycle-based methods of measuring *Prochlorococcus* division rates using an individual-based model," *Limnol. Oceanogr. Methods* **13**:640 - 650, [doi: 10.1002/lom3.10054]( https://doi.org/10.1002/lom3.10054).
