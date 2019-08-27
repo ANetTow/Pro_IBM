@@ -49,14 +49,15 @@ Input:
 |---|     ---|                          ---|
 |mu_cell| Maximum cellular growth rate| 1 - 3.5 d^(-1)|
 |T_S|     Duration of S phase|          0.1 - 0.33 d|
-|T_G2` =          Duration G2 phase (0.05 - 0.30 d)
-|daylength` =     Length of daylight, sunrise to sunset (10 - 14 h)
-|light_regime` =  String denoting whether light is binary ('binary'), sinusoidal ('sine'), or constant ('constant') 
-|Cg` =            Circadian gate (d)
-|Ps_width` =      Parameter that controls the "width" of the probability function for cells entering S phase based on their size (fg C). Typically 85.
-|Ps_zero` =       Parameter that states where the probability for cells entering S is zero. Typically 45.
+|T_G2|    Duration G2 phase|            0.05 - 0.30 d|
+|daylength|Length of daylight, sunrise to sunset|10 - 14 h|
+|light_regime|String denoting whether light is binary, sinusoidal, or constant| 'binary', 'sine', or 'constant'|
+|Cg|      Circadian gate|               0.1 - 0.35 d|
+|Ps_width|Parameter that controls the "width" of the probability function for cells entering S phase based on their size| 85 fg C|
+|Ps_zero|Parameter that states where the probability for cells entering S is zero|45|
 
-* Output:
+Output:
+
   - `data_store` =    Structure containing cellular information
   - `av_cell_size` =  Average cell size (fg C per cell )
   - `av_cell_dna` =   Average DNA per cell (genome copies per cell )
