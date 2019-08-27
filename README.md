@@ -15,6 +15,11 @@ The model is run for 30 days.  During the last 3 days, grazing is turned off for
 
 ## Functions
 
+The model is written in MATLAB (devloped in R2012b, still runs in R2018b).
+
+-`Pro_IBM`
+
+
 ## Variables
 
 ## References
