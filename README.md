@@ -17,8 +17,15 @@ The model is run for 30 days.  During the last 3 days, grazing is turned off for
 
 The model is written in MATLAB (devloped in R2012b, still runs in R2018b).
 
--`Pro_IBM`
-
+-`Pro_IBM` runs the model with user-defined input parameters.
+-`initialize_pro` initializes the structure that stores cell data and the starting population.
+-`makepro_vectorized` takes cells ready to divide and turns them into two daughter cells.
+-`killpro_vectorized` randomly grazes cells at a fixed proportion.
+-`light_sine` simulates light as a truncated sine wave given the time of day and the day length.
+-`exp_growth` 
+-`calc_resp_bin`
+-`calc_resp_sine`
+-`calc_resp_cont`
 
 ## Variables
 
