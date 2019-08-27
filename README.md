@@ -38,17 +38,23 @@ The model is written in MATLAB (devloped in R2012b, still runs in R2018b).  Down
 ## Variables
 
 Cell cycle parameters and other variables are defined by the user:  
+
 `[data_store, av_cell_size, av_cell_dna, tm, mu_pop, cells, S, G2, index] = Pro_IBM(mu_cell, T_S, T_G2, daylength, light_regime, Cg, Ps_width, Ps_zero)`
 
-* Input:
-  - `mu_cell` =       Cellular growth rate (d^(?1))
-  - `T_S` =           Duration of S phase (d)
-  - `T_G2` =          Duration G2 phase (d)
-  - `daylength` =     Length of daylight , sunrise to sunset (h)
-  - `light_regime` =  String denoting whether light is binary ('binary'), sinusoidal ('sine'), or constant ('constant') 
-  - `Cg` =            Circadian gate (d)
-  - `Ps_width` =      Parameter that controls the "width" of the probability function for cells entering S phase based on their size (fg C). Typically 85.
-  - `Ps_zero` =       Parameter that states where the probability for cells entering S is zero. Typically 45.
+Input/output variables and reasonable ranges for *Prochlorococcus* are summarized in the table below:
+
+Input:
+
+|Name|    Description|                  Values |
+|---|     ---|                          ---|
+|mu_cell| Maximum cellular growth rate| 1 - 3.5 d^(-1)|
+|T_S|     Duration of S phase|          0.1 - 0.33 d|
+|T_G2` =          Duration G2 phase (0.05 - 0.30 d)
+|daylength` =     Length of daylight, sunrise to sunset (10 - 14 h)
+|light_regime` =  String denoting whether light is binary ('binary'), sinusoidal ('sine'), or constant ('constant') 
+|Cg` =            Circadian gate (d)
+|Ps_width` =      Parameter that controls the "width" of the probability function for cells entering S phase based on their size (fg C). Typically 85.
+|Ps_zero` =       Parameter that states where the probability for cells entering S is zero. Typically 45.
 
 * Output:
   - `data_store` =    Structure containing cellular information
