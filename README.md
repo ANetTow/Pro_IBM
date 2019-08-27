@@ -17,28 +17,28 @@ The model is run for 30 days.  During the last 3 days, grazing is turned off for
 
 The model is written in MATLAB (devloped in R2012b, still runs in R2018b).
 
-  *`Pro_IBM` runs the model with user-defined input parameters.
+* `Pro_IBM` runs the model with user-defined input parameters.
 
-  *`initialize_pro` initializes the structure that stores cell data and the starting population.
+* `initialize_pro` initializes the structure that stores cell data and the starting population.
 
-  *`makepro_vectorized` takes cells ready to divide and turns them into two daughter cells.
+* `makepro_vectorized` takes cells ready to divide and turns them into two daughter cells.
 
-  *`killpro_vectorized` randomly grazes cells at a fixed proportion.
+* `killpro_vectorized` randomly grazes cells at a fixed proportion.
 
-  *`light_sine` simulates light as a truncated sine wave given the time of day and the day length.
+* `light_sine` simulates light as a truncated sine wave given the time of day and the day length.
 
-  *`exp_growth` increases the size of cells according to current size, cellular growth rates, and light levels.
+* `exp_growth` increases the size of cells according to current size, cellular growth rates, and light levels.
 
-  *`calc_resp_bin` calculates cellular respiration rate according to cellular growth rate and daylength under LD conditions with binary light.
+* `calc_resp_bin` calculates cellular respiration rate according to cellular growth rate and daylength under LD conditions with binary light.
 
-  *`calc_resp_sine` calculates 
+* `calc_resp_sine` calculates cellular respiration rate according to cellular growth rate and daylength under LD conditions with sinusoidal light.
 
-  *`calc_resp_cont`
+* `calc_resp_cont` calculates cellular respiration rate under continuous light conditions.
 
 ## Variables
 
 ## References
 
--Hynes A. M., B. J. Blythe, and B. J. Binder (2015a).  "An individual-based model for the analysis of *Prochlorococcus* diel cycle behavior," *Ecol. Model.* **301**:1 - 15, doi:10.1016/j.ecolmodel.2015.01.011.
+- Hynes A. M., B. J. Blythe, and B. J. Binder (2015a).  "An individual-based model for the analysis of *Prochlorococcus* diel cycle behavior," *Ecol. Model.* **301**:1 - 15, doi:10.1016/j.ecolmodel.2015.01.011.
 
--Hynes A. M., K. L. Rhodes, and B. J. Binder (2015b).  "Assessing cell cycle-based methods of measuring *Prochlorococcus* division rates using an individual-based model," *Limnol. Oceanogr. Methods* **13**:640 - 650, doi:10.1002/lom3.10054.
+- Hynes A. M., K. L. Rhodes, and B. J. Binder (2015b).  "Assessing cell cycle-based methods of measuring *Prochlorococcus* division rates using an individual-based model," *Limnol. Oceanogr. Methods* **13**:640 - 650, doi:10.1002/lom3.10054.
